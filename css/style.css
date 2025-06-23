@@ -337,13 +337,18 @@ a {
 
 /* Project-section */
 
-
 .project-section {
+  width: 100%;
+  margin: auto;
+  background-color: #0f1624;
+}
+
+.project-div {
   padding: 80px 20px;
   text-align: center;
   max-width: 1300px;
   margin: auto;
-  background-color: #0f1624;
+
 }
 
 .project-subheading {
@@ -384,26 +389,33 @@ a {
   transition: 0.3s;
   height: 500px;
   position: relative;
+  transform: translateY(0px);
+  transition: all 2s;
 
 }
 
 .project-card:hover {
   transform: translateY(-10px);
+  transition: all 2s;
 }
-
+/* hover effect start */
 .overlay {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
   width: 100%;
+  height: 500px;
   padding: 20px;
   transition: 0.4s;
-  /* opacity: 0; */
-
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .project-card:hover .overlay {
-  opacity: 1;
+  opacity: 0.7;
+  bottom: 0;
+  background:linear-gradient(to bottom,transparent,#fd4766)
 }
 
 .project-skill {
@@ -419,26 +431,21 @@ a {
 }
 
 .project-subtitle {
-  color: #989cab;
-  margin-top: 15px;
-  opacity: 0;
-  transform: translateY(20px);
-  display: none;
-  transition: 0.4s;
+  color: white;
   opacity: 0;
 }
+
 
 .project-card:hover .project-subtitle {
   opacity: 1;
   transform: translateY(0);
   display: block;
 }
-
+/* hovern end */
 .project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: 0.3s;
 }
 
@@ -454,23 +461,30 @@ a {
   padding: 15px 60px;
   font-size: 14px;
   border-radius: 50px;
+
   transition: 0.8s;
 }
 
 .project-button:hover {
   background-color: transparent;
+  color: #fd4766;
 }
 
-
-
-
 .Latest-section {
+  width: 100%;
+  margin: auto;
+  background-color: #0f1624;
+}
+
+.Latest-div {
   padding: 80px 20px;
   text-align: center;
   max-width: 1300px;
   margin: auto;
-  background-color: #0f1624;
+
 }
+
+
 
 .Latest-subheading {
   background: linear-gradient(410deg,
@@ -517,20 +531,20 @@ a {
   transform: translateY(-10px);
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 20px;
   transition: 0.4s;
-  /* opacity: 0; */
 
-}
 
-.Latest-card:hover .overlay {
+} */
+
+/* .Latest-card:hover .overlay {
   opacity: 1;
-}
+} */
 
 .Latest-skill {
   color: #b0b9c4;
@@ -640,8 +654,8 @@ a {
 }
 
 .contact-right {
- max-width: 590px;
- height: auto;
+  max-width: 590px;
+  height: auto;
 }
 
 .contact-right img {
@@ -655,12 +669,15 @@ a {
   border: 2px solid #fd4766;
   background-color: #fd4766;
   color: white;
-  padding: 10px 40px;
+  width: 30%;
+  padding: 10px 30px;
   font-size: 14px;
   border-radius: 50px;
   transition: 0.8s;
+  text-wrap: nowrap;
 }
 
 .contact-btn:hover {
   background-color: transparent;
+  color: #fd4766;
 }
