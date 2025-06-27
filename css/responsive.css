@@ -1,0 +1,30 @@
+@media (min-width:320px){
+    .nav-links{
+        display: none;
+    }
+    .nav-icon{
+        display: none;
+    }
+    .links-btn{
+        display: block;
+    }
+    .navbar{
+        margin: 20px 10px;
+    }
+
+    .intro{
+        padding: 100px auto;
+    }
+    .intro-content{
+        padding: 100px auto;
+    }
+    .service-section{
+        padding: 80px 10px;
+    }
+    .project-div {
+        padding: 80px 10px;
+    }
+.Latest-div{
+    padding: 80px 10px;
+}
+}

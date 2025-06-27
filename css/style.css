@@ -25,8 +25,8 @@ a {
 }
 
 .container {
-  max-width: 1500px;
-  margin: 10px auto;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* navebar start */
@@ -64,13 +64,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 80px;
+  gap: 20px;
 }
 
 .nav-icon {
   display: flex;
   gap: 30px;
   color: white;
+  margin-right: 80px;
 }
 
 .nav-icon a {
@@ -96,21 +97,26 @@ a {
   border: 2px solid #fd6c85;
 }
 
+.links-btn {
+  color: #c6c9d8;
+  display: none;
+}
+
 /* intro section */
 
 .intro {
-  height: 100vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   color: white;
-
+  margin: 100px auto;
 }
 
 .intro-content {
   max-width: 725px;
   text-align: start;
+  justify-content: center;
 }
 
 .intro-heading {
@@ -135,6 +141,7 @@ a {
 
 .intro-course {
   color: #fd4766;
+  font-size: 57px
 }
 
 .cv-btn {
@@ -156,10 +163,9 @@ a {
 /* about section */
 
 .about-section {
-  padding: 80px 0;
+  padding: 80px 10px;
   background-color: #0f1624;
   color: white;
-  font-family: "Poppins", sans-serif;
 }
 
 .about-container {
@@ -206,12 +212,16 @@ a {
 
 .about-tabs {
   border: 2px solid rgba(255, 255, 255, 0.167);
-  height: 60px;
+  /* height: 60px; */
   width: 100%;
   border-radius: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap:wrap ;
+  /* padding: 15px 0; */
+  text-wrap: nowrap;
+  overflow: hidden;
 }
 
 .about-tabs .tab {
@@ -297,14 +307,14 @@ a {
   line-height: 1.6;
 }
 
-.services-maingrid {
+/* .services-maingrid {
   display: flex;
   justify-content: center;
-}
+} */
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
@@ -313,7 +323,7 @@ a {
   padding: 50px;
   height: 300px;
   border-radius: 8px;
-  transition: 0.5s ease;
+  transition: 0.5s;
   text-align: left;
 }
 
@@ -398,6 +408,7 @@ a {
   transform: translateY(-10px);
   transition: all 2s;
 }
+
 /* hover effect start */
 .overlay {
   position: absolute;
@@ -413,9 +424,8 @@ a {
 }
 
 .project-card:hover .overlay {
-  opacity: 0.7;
   bottom: 0;
-  background:linear-gradient(to bottom,transparent,#fd4766)
+  background: linear-gradient(to bottom, transparent, #fd4766)
 }
 
 .project-skill {
@@ -441,6 +451,7 @@ a {
   transform: translateY(0);
   display: block;
 }
+
 /* hovern end */
 .project-card img {
   width: 100%;
@@ -470,6 +481,8 @@ a {
   color: #fd4766;
 }
 
+/* Latest-section start */
+
 .Latest-section {
   width: 100%;
   margin: auto;
@@ -479,12 +492,9 @@ a {
 .Latest-div {
   padding: 80px 20px;
   text-align: center;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   margin: auto;
-
 }
-
-
 
 .Latest-subheading {
   background: linear-gradient(410deg,
@@ -519,32 +529,38 @@ a {
 }
 
 .Latest-card {
-  border-radius: 10px;
+ border-radius: 10px;
   overflow: hidden;
   transition: 0.3s;
   height: 500px;
   position: relative;
-
+  transform: translateY(0px);
+  transition: all 2s;
 }
 
 .Latest-card:hover {
-  transform: translateY(-10px);
+   transform: translateY(-10px);
+  transition: all 2s;
 }
 
-/* .overlay {
+.Latest-overlay {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
   width: 100%;
+  height: 500px;
   padding: 20px;
   transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: left;
+}
 
-
-} */
-
-/* .Latest-card:hover .overlay {
-  opacity: 1;
-} */
+.Latest-card:hover .Latest-overlay {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, #fd4766)
+}
 
 .Latest-skill {
   color: #b0b9c4;
@@ -558,32 +574,56 @@ a {
   font-weight: 700;
 }
 
-.Latest-subtitle {
-  color: #989cab;
-  margin-top: 15px;
+.Latest-btn {
+  color: white;
+  border: 2px solid rgba(161, 161, 161, 0.404);
+  width: 115px;
+  border-radius: 4px;
+  padding: 10px;
   opacity: 0;
-  transform: translateY(20px);
-  display: none;
-  transition: 0.4s;
-  opacity: 0;
+  transition: 0.7s;
 }
 
-.Latest-card:hover .Latest-subtitle {
+.Latest-overlay .Latest-btn:hover{
+  background-color: #FC4766;
+  border: 2px solid #FC4766;
+
+}
+
+.Latest-card:hover .Latest-btn {
   opacity: 1;
   transform: translateY(0);
   display: block;
 }
 
+
+/* hovern end */
 .Latest-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: 0.3s;
 }
 
 .Latest-card:hover img {
   transform: scale(1.05);
+}
+
+.Latest-button {
+  margin-top: 50px;
+  border: 2px solid #fd4766;
+  background-color: #fd4766;
+  color: white;
+  padding: 15px 60px;
+  font-size: 14px;
+  border-radius: 50px;
+
+  transition: 0.8s;
+}
+
+.Latest-button:hover {
+  background-color: transparent;
+  color: #fd4766;
 }
 
 
@@ -610,10 +650,10 @@ a {
 }
 
 .contact-subtitle {
-  background: linear-gradient(410deg,
-      #1c99fe 47.69%,
-      #7644ff 49.19%,
-      #fd4766 51.69%);
+  background: linear-gradient(480deg,
+      #1c99fe 10.69%,
+      #7644ff 16.19%,
+      #fd4766 21.69%);
   background-clip: text;
   color: transparent;
   font-weight: 600;
@@ -669,7 +709,7 @@ a {
   border: 2px solid #fd4766;
   background-color: #fd4766;
   color: white;
-  width: 30%;
+  width: 150px;
   padding: 10px 30px;
   font-size: 14px;
   border-radius: 50px;
@@ -680,4 +720,51 @@ a {
 .contact-btn:hover {
   background-color: transparent;
   color: #fd4766;
+}
+
+.footer {
+  background-color: #091020;
+  margin-top: -50px;
+}
+
+.footer-section {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.circle {
+  border: 2px solid #8b909f;
+  border-radius: 100%;
+  padding: 10px 15px;
+  margin-right: 20px;
+  transition: 1s;
+}
+
+.circle i {
+  color: #8b909f;
+}
+
+.circle:hover {
+  background-color: #fd4766;
+  border: 2px solid #fd4766;
+  transform: translateY(-5px);
+}
+
+.circle:hover i {
+  color: white;
+}
+
+.Copyright {
+  color: #757371;
+  margin-top: 20px;
 }
